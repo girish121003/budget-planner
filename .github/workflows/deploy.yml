@@ -24,11 +24,11 @@ jobs:
         env:
           NODE_ENV: production
         run: |
-          npm run build container -- --configuration=production --base-href=/budget-planner/
-          npm run build mfeDashboard -- --configuration=production --base-href=/budget-planner/
-          npm run build mfeBudget -- --configuration=production --base-href=/budget-planner/
-          npm run build mfeReports -- --configuration=production --base-href=/budget-planner/
-          npm run build mfeSettings -- --configuration=production --base-href=/budget-planner/
+          npm run build container -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npm run build mfeDashboard -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npm run build mfeBudget -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npm run build mfeReports -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npm run build mfeSettings -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
 
       - name: Prepare deployment
         run: |
@@ -42,6 +42,13 @@ jobs:
           cp -r dist/mfeBudget/* dist/github-pages/mfeBudget/
           cp -r dist/mfeReports/* dist/github-pages/mfeReports/
           cp -r dist/mfeSettings/* dist/github-pages/mfeSettings/
+          
+          # Rename remote entry files from .mjs to .js
+          for app in mfeDashboard mfeBudget mfeReports mfeSettings; do
+            if [ -f "dist/github-pages/$app/remoteEntry.mjs" ]; then
+              mv "dist/github-pages/$app/remoteEntry.mjs" "dist/github-pages/$app/remoteEntry.js"
+            fi
+          done
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

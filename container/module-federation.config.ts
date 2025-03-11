@@ -16,16 +16,16 @@ const config: ModuleFederationConfig = {
    */
   remotes: [
     ['mfeSettings', process.env.NODE_ENV === 'production' 
-      ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.mjs'
+      ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.js'
       : 'http://localhost:4204/remoteEntry.mjs'],
     ['mfeReports', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.mjs'
+      ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.js'
       : 'http://localhost:4202/remoteEntry.mjs'],
     ['mfeBudget', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeBudget/remoteEntry.mjs'
+      ? 'https://girish121003.github.io/budget-planner/mfeBudget/remoteEntry.js'
       : 'http://localhost:4203/remoteEntry.mjs'],
     ['mfeDashboard', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.mjs'
+      ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
       : 'http://localhost:4201/remoteEntry.mjs']
   ],
   shared: {
