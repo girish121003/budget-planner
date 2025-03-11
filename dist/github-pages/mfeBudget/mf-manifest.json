@@ -1,0 +1,230 @@
+{
+  "id": "mfeBudget",
+  "name": "mfeBudget",
+  "metaData": {
+    "name": "mfeBudget",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@budget-planner-app/source"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.mjs",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfeBudget",
+    "pluginVersion": "0.9.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "id": "mfeBudget:@angular/common/http",
+      "name": "@angular/common/http",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [
+            "177.js",
+            "705.js",
+            "488.js",
+            "56.js",
+            "546.js"
+          ],
+          "sync": [
+            "626.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/common",
+      "name": "@angular/common",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [
+            "705.js",
+            "488.js",
+            "56.js",
+            "546.js"
+          ],
+          "sync": [
+            "177.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/di",
+      "name": "@angular/core/primitives/di",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "56.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/event-dispatch",
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "546.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/signals",
+      "name": "@angular/core/primitives/signals",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "488.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core",
+      "name": "@angular/core",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [
+            "488.js",
+            "56.js",
+            "546.js"
+          ],
+          "sync": [
+            "705.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/platform-browser",
+      "name": "@angular/platform-browser",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [
+            "177.js",
+            "705.js",
+            "203.js",
+            "626.js",
+            "488.js",
+            "56.js",
+            "546.js"
+          ],
+          "sync": [
+            "345.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/router",
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [
+            "177.js",
+            "705.js",
+            "345.js",
+            "488.js",
+            "56.js",
+            "546.js",
+            "626.js"
+          ],
+          "sync": [
+            "220.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "mfeBudget:Routes",
+      "name": "Routes",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./Routes"
+    }
+  ]
+}
