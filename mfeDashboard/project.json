@@ -66,8 +66,11 @@
     "serve": {
       "executor": "@nx/angular:dev-server",
       "options": {
-        "port": 4204,
-        "publicHost": "http://localhost:4204"
+        "port": 4201,
+        "publicHost": "http://localhost:4201",
+        "hmr": true,
+        "watch": true,
+        "liveReload": true
       },
       "configurations": {
         "production": {
