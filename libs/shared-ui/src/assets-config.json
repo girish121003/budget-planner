@@ -1,0 +1,5 @@
+{
+  "glob": "**/*",
+  "input": "libs/shared-ui/src/assets/",
+  "output": "assets/shared/"
+} 

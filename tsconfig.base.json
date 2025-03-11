@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@budget-planner/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "mfeBudget/Routes": ["mfeBudget/src/app/remote-entry/entry.routes.ts"],
+      "mfeDashboard/Routes": [
+        "mfeDashboard/src/app/remote-entry/entry.routes.ts"
+      ],
+      "mfeReports/Routes": ["mfeReports/src/app/remote-entry/entry.routes.ts"],
+      "mfeSettings/Routes": ["mfeSettings/src/app/remote-entry/entry.routes.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
