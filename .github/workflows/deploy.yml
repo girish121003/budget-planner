@@ -50,8 +50,18 @@ jobs:
             fi
           done
 
+          # Create _headers file for CORS
+          echo "/*
+            Access-Control-Allow-Origin: *
+            Access-Control-Allow-Methods: GET, OPTIONS
+            Access-Control-Allow-Headers: *" > dist/github-pages/_headers
+
+          # Create .nojekyll file to prevent Jekyll processing
+          touch dist/github-pages/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/github-pages 
+          publish_dir: ./dist/github-pages
+          enable_jekyll: false 
