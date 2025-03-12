@@ -519,9 +519,8 @@ import { RouterModule } from '@angular/router';
     }
     
     .user-info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+     position: relative;
+     bottom: 40px;
     }
     
     .user-avatar {
@@ -534,7 +533,7 @@ import { RouterModule } from '@angular/router';
     
     .user-name {
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: bold;
       color: #333;
       margin-right: auto;
     }

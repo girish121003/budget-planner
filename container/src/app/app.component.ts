@@ -127,10 +127,13 @@ export class AppComponent {
   isDrawerOpen = false;
   
   navigationItems = [
-    { name: 'Dashboard', icon: 'home-icon.png', route: '/' },
-    { name: 'Budget', icon: 'expenses-icon.png', route: '/budget' },
-    { name: 'Reports', icon: 'reports-icon.png', route: '/reports' },
-    { name: 'Settings', icon: 'settings-icon.png', route: '/settings' }
+    { name: 'Home', icon: 'home-icon.png', route: '/' },
+    { name: 'Plan Your Budget', icon: 'budget-icon.png', route: '/budget' },
+    { name: 'Analytics & Reports', icon: 'reports-icon.png', route: '/reports' },
+    { name: 'Settings', icon: 'settings-icon.png', route: '/settings' },
+    { name: 'User Assistance', icon: 'assistance-icon.png', route: '/assistance' },
+    { name: 'Track Your Expenses', icon: 'expenses-icon.png', route: '/expenses' },
+    { name: 'Summary', icon: 'summary-icon.png', route: '/summary' }
   ];
   
   constructor(private router: Router) {}

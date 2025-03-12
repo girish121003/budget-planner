@@ -31,10 +31,14 @@ const config: ModuleFederationConfig = {
   shared: (libraryName, sharedConfig) => {
     const sharedLibraries = {
       '@angular/core': { singleton: true, strictVersion: true, eager: true },
+      '@angular/core/primitives/signals': { singleton: true, strictVersion: true, eager: true },
+      '@angular/core/primitives/di': { singleton: true, strictVersion: true, eager: true },
+      '@angular/core/primitives/event-dispatch': { singleton: true, strictVersion: true, eager: true },
       '@angular/common': { singleton: true, strictVersion: true, eager: true },
       '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
       '@angular/router': { singleton: true, strictVersion: true, eager: true },
-      '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true }
+      '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true },
+      'tslib': { singleton: true, strictVersion: true, eager: true }
     };
     
     return sharedLibraries[libraryName] || sharedConfig;
