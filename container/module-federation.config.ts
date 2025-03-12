@@ -17,7 +17,7 @@ const config: ModuleFederationConfig = {
   remotes: [
     ['mfeSettings', process.env.NODE_ENV === 'production' 
       ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.js'
-      : 'http://localhost:4204/remoteEntry.mjs'],
+      : 'http://localhost:4201/remoteEntry.mjs'],
     ['mfeReports', process.env.NODE_ENV === 'production'
       ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.js'
       : 'http://localhost:4202/remoteEntry.mjs'],
@@ -26,14 +26,18 @@ const config: ModuleFederationConfig = {
       : 'http://localhost:4203/remoteEntry.mjs'],
     ['mfeDashboard', process.env.NODE_ENV === 'production'
       ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
-      : 'http://localhost:4201/remoteEntry.mjs']
+      : 'http://localhost:4205/remoteEntry.mjs']
   ],
-  shared: {
-    '@angular/core': { singleton: true, strictVersion: true, eager: true },
-    '@angular/common': { singleton: true, strictVersion: true, eager: true },
-    '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
-    '@angular/router': { singleton: true, strictVersion: true, eager: true },
-    '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true }
+  shared: (libraryName, sharedConfig) => {
+    const sharedLibraries = {
+      '@angular/core': { singleton: true, strictVersion: true, eager: true },
+      '@angular/common': { singleton: true, strictVersion: true, eager: true },
+      '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
+      '@angular/router': { singleton: true, strictVersion: true, eager: true },
+      '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true }
+    };
+    
+    return sharedLibraries[libraryName] || sharedConfig;
   }
 };
 

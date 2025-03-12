@@ -6,7 +6,7 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
 @Component({
   standalone: true,
   imports: [RouterModule, CommonModule, DrawerComponent, FooterComponent],
-  selector: 'app-root',
+  selector: 'budget-planner-root',
   template: `
     <div class="app-container" [class.drawer-open]="isDrawerOpen">
       <header class="app-header">
