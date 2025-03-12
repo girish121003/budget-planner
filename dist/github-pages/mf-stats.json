@@ -1,0 +1,491 @@
+{
+  "id": "container",
+  "name": "container",
+  "metaData": {
+    "name": "container",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@budget-planner-app/source"
+    },
+    "remoteEntry": {
+      "name": "",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "container",
+    "pluginVersion": "0.9.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "@angular/animations/browser",
+      "version": "19.2.1",
+      "eager": false,
+      "id": "container:@angular/animations/browser",
+      "assets": {
+        "js": {
+          "async": [
+            "969.eaa3881577abe71a.js"
+          ],
+          "sync": [
+            "8.e635c73204d02b92.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "@angular/animations",
+      "version": "19.2.1",
+      "eager": false,
+      "id": "container:@angular/animations",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "969.eaa3881577abe71a.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common/http",
+      "version": "19.2.1",
+      "id": "container:@angular/common/http",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common",
+      "version": "19.2.1",
+      "id": "container:@angular/common",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/di",
+      "version": "19.2.1",
+      "id": "container:@angular/core/primitives/di",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "19.2.1",
+      "id": "container:@angular/core/primitives/event-dispatch",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/signals",
+      "version": "19.2.1",
+      "id": "container:@angular/core/primitives/signals",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core",
+      "version": "19.2.1",
+      "id": "container:@angular/core",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "@angular/forms",
+      "version": "19.2.1",
+      "eager": false,
+      "id": "container:@angular/forms",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "341.20193dfc10d5eca3.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "@angular/platform-browser/animations",
+      "version": "19.2.1",
+      "eager": false,
+      "id": "container:@angular/platform-browser/animations",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js"
+          ],
+          "sync": [
+            "650.45355d5213b0489a.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/platform-browser",
+      "version": "19.2.1",
+      "id": "container:@angular/platform-browser",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "id": "container:@angular/router",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "0.0.1",
+      "shareScope": "default",
+      "eager": false,
+      "name": "@budget-planner/shared-ui",
+      "version": "0.0.1",
+      "id": "container:@budget-planner/shared-ui",
+      "assets": {
+        "js": {
+          "async": [
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js"
+          ],
+          "sync": [
+            "840.5d15507b75bfca62.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^2.8.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "tslib",
+      "version": "2.8.1",
+      "id": "container:tslib",
+      "assets": {
+        "js": {
+          "async": [
+            "8.e635c73204d02b92.js",
+            "969.eaa3881577abe71a.js",
+            "341.20193dfc10d5eca3.js",
+            "650.45355d5213b0489a.js",
+            "840.5d15507b75bfca62.js",
+            "54.382ab81d767f2235.js"
+          ],
+          "sync": [
+            "polyfills.710f60346c05428d.js",
+            "main.b020ba0555d76652.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      },
+      "usedIn": []
+    }
+  ],
+  "remotes": [
+    {
+      "alias": "mfeDashboard",
+      "consumingFederationContainerName": "container",
+      "federationContainerName": "http://localhost:4205/remoteEntry.mjs",
+      "moduleName": "Routes",
+      "usedIn": [
+        "consume shared module (default) mfeDashboard/Routes@* (strict) (fallback: mfeDashboard/src/app/remote-entry/entry.routes.ts)"
+      ],
+      "version": "*"
+    },
+    {
+      "alias": "mfeSettings",
+      "consumingFederationContainerName": "container",
+      "federationContainerName": "http://localhost:4201/remoteEntry.mjs",
+      "moduleName": "Routes",
+      "usedIn": [
+        "consume shared module (default) mfeSettings/Routes@* (strict) (fallback: mfeSettings/src/app/remote-entry/entry.routes.ts)"
+      ],
+      "version": "*"
+    },
+    {
+      "alias": "mfeReports",
+      "consumingFederationContainerName": "container",
+      "federationContainerName": "http://localhost:4202/remoteEntry.mjs",
+      "moduleName": "Routes",
+      "usedIn": [
+        "consume shared module (default) mfeReports/Routes@* (strict) (fallback: mfeReports/src/app/remote-entry/entry.routes.ts)"
+      ],
+      "version": "*"
+    },
+    {
+      "alias": "mfeBudget",
+      "consumingFederationContainerName": "container",
+      "federationContainerName": "http://localhost:4203/remoteEntry.mjs",
+      "moduleName": "Routes",
+      "usedIn": [
+        "consume shared module (default) mfeBudget/Routes@* (strict) (fallback: mfeBudget/src/app/remote-entry/entry.routes.ts)"
+      ],
+      "version": "*"
+    }
+  ],
+  "exposes": []
+}

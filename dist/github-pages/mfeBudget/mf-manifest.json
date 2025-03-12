@@ -1,0 +1,337 @@
+{
+  "id": "mfeBudget",
+  "name": "mfeBudget",
+  "metaData": {
+    "name": "mfeBudget",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@budget-planner-app/source"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.mjs",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfeBudget",
+    "pluginVersion": "0.9.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "id": "mfeBudget:@angular/animations",
+      "name": "@angular/animations",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "969.b47c5530eb853e6c.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/common/http",
+      "name": "@angular/common/http",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "common.25d53be11644e3c4.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js"
+          ],
+          "sync": [
+            "626.5506fee8552b6b04.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/common",
+      "name": "@angular/common",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js",
+            "common.25d53be11644e3c4.js"
+          ],
+          "sync": [
+            "177.8e7199c002a3576d.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/di",
+      "name": "@angular/core/primitives/di",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js",
+            "common.25d53be11644e3c4.js"
+          ],
+          "sync": [
+            "56.5bf5e95b53369d58.js",
+            "705.acc428f7774620b0.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/event-dispatch",
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js",
+            "common.25d53be11644e3c4.js"
+          ],
+          "sync": [
+            "546.47c02bd1392d6a7f.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core/primitives/signals",
+      "name": "@angular/core/primitives/signals",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js",
+            "common.25d53be11644e3c4.js"
+          ],
+          "sync": [
+            "488.9da1b6732033dac4.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/core",
+      "name": "@angular/core",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js",
+            "common.25d53be11644e3c4.js"
+          ],
+          "sync": [
+            "705.acc428f7774620b0.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/forms",
+      "name": "@angular/forms",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "~19.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "341.fc721bf28941dcce.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/platform-browser",
+      "name": "@angular/platform-browser",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "common.25d53be11644e3c4.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js"
+          ],
+          "sync": [
+            "345.f7050d8ced77d9dd.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@angular/router",
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "840.e7e4d76f706deddf.js",
+            "common.25d53be11644e3c4.js",
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js"
+          ],
+          "sync": [
+            "242.7b3b7a4160cb5b46.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:@budget-planner/shared-ui",
+      "name": "@budget-planner/shared-ui",
+      "version": "0.0.1",
+      "singleton": true,
+      "requiredVersion": "0.0.1",
+      "assets": {
+        "js": {
+          "async": [
+            "341.fc721bf28941dcce.js",
+            "969.b47c5530eb853e6c.js"
+          ],
+          "sync": [
+            "840.e7e4d76f706deddf.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeBudget:tslib",
+      "name": "tslib",
+      "version": "2.8.1",
+      "singleton": true,
+      "requiredVersion": "^2.8.1",
+      "assets": {
+        "js": {
+          "async": [
+            "546.47c02bd1392d6a7f.js",
+            "488.9da1b6732033dac4.js",
+            "705.acc428f7774620b0.js",
+            "177.8e7199c002a3576d.js",
+            "common.25d53be11644e3c4.js",
+            "969.b47c5530eb853e6c.js",
+            "626.5506fee8552b6b04.js",
+            "56.5bf5e95b53369d58.js",
+            "341.fc721bf28941dcce.js",
+            "345.f7050d8ced77d9dd.js",
+            "242.7b3b7a4160cb5b46.js",
+            "840.e7e4d76f706deddf.js",
+            "64.c737c1a8dae59933.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.21627228fdf9790c.js",
+            "main.8ee5624fa22e7783.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.ef46db3751d8e999.css"
+          ]
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "mfeBudget:Routes",
+      "name": "Routes",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./Routes"
+    }
+  ]
+}

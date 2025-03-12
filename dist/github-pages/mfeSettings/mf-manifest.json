@@ -1,0 +1,216 @@
+{
+  "id": "mfeSettings",
+  "name": "mfeSettings",
+  "metaData": {
+    "name": "mfeSettings",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@budget-planner-app/source"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.mjs",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfeSettings",
+    "pluginVersion": "0.9.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "id": "mfeSettings:@angular/common/http",
+      "name": "@angular/common/http",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "626.fec066f641bebbf8.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/common",
+      "name": "@angular/common",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "177.cd7b4370ee244544.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/core/primitives/di",
+      "name": "@angular/core/primitives/di",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "56.15dff9dcd54e9499.js",
+            "705.819350f625e11051.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/core/primitives/event-dispatch",
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "546.17dc6e38d2f031cf.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/core/primitives/signals",
+      "name": "@angular/core/primitives/signals",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "488.912f7c15810945bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/core",
+      "name": "@angular/core",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "705.819350f625e11051.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/platform-browser",
+      "name": "@angular/platform-browser",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "345.e44d8affe5aa57b6.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfeSettings:@angular/router",
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "common.d846c114b16b3093.js"
+          ],
+          "sync": [
+            "220.48d6c96b729b85c3.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "mfeSettings:Routes",
+      "name": "Routes",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./Routes"
+    }
+  ]
+}
