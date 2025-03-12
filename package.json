@@ -2,7 +2,10 @@
   "name": "@budget-planner-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "mock-server": "json-server --watch db.json --port 3001",
+    "mock-server-delay": "json-server --watch db.json --port 3001 --delay 1000"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.1",
@@ -75,6 +78,7 @@
     "jest-preset-angular": "~14.4.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
+    "json-server": "^1.0.0-beta.3",
     "jsonc-eslint-parser": "^2.1.0",
     "ng-packagr": "~19.2.0",
     "nx": "^20.5.0",
