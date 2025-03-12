@@ -6,6 +6,7 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
 @Component({
   standalone: true,
   imports: [RouterModule, CommonModule, DrawerComponent, FooterComponent],
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'budget-planner-root',
   template: `
     <div class="app-container" [class.drawer-open]="isDrawerOpen">
@@ -32,11 +33,13 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
         (navigate)="navigateTo($event)"
       ></app-drawer>
       
-      <main class="main-content">
-        <router-outlet></router-outlet>
-      </main>
+      <div class="content-wrapper">
+        <main class="main-content">
+          <router-outlet></router-outlet>
+        </main>
 
-      <app-footer></app-footer>
+        <app-footer></app-footer>
+      </div>
     </div>
   `,
   styles: [`
@@ -55,8 +58,6 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
       flex-direction: column;
       min-height: 100vh;
       width: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
     }
 
     .drawer-open {
@@ -73,9 +74,12 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       width: 100%;
       box-sizing: border-box;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
+      height: 64px;
     }
     
     .logo-container {
@@ -113,12 +117,21 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
       height: 24px;
     }
     
+    .content-wrapper {
+      padding-top: 64px; /* Same as header height */
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
     .main-content {
       flex: 1;
       width: 100%;
       box-sizing: border-box;
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      z-index: 2;
+      padding: 1rem;
     }
   `]
 })
