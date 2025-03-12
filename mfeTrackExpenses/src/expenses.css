@@ -1,0 +1,161 @@
+/* Base styles */
+.expenses-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.expenses-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Tab styling */
+.tab-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.tab-button.active {
+  background-color: #C26B1B;
+  color: white;
+}
+
+/* Form styling */
+.expenses-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4B5563;
+  margin-bottom: 0.5rem;
+}
+
+.form-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #B45309;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background-color: #F9FAFB;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.dollar-input {
+  padding-left: 30px;
+}
+
+.form-input:focus {
+  border-color: #C26B1B;
+  box-shadow: 0 0 0 2px rgba(194, 107, 27, 0.2);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 38px;
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: none;
+  width: 48%; /* Give buttons almost half the width, but leave some spacing */
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #C26B1B;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #A45615;
+}
+
+.btn-secondary {
+  background-color: #F5F5F5;
+  color: #111827;
+  border: 1px solid #E5E7EB;
+}
+
+.btn-secondary:hover {
+  background-color: #E5E7EB;
+}
+
+/* Remove number input arrows */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+} 
