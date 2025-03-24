@@ -1,3 +1,31 @@
+/* Shared UI Variables */
+:root {
+  /* Brand Colors */
+  --brand-primary: #C26B1B;
+  --brand-primary-dark: #A45615;
+  --brand-secondary: #F5F5F5;
+  --brand-accent: #4A90E2;
+
+  /* Text Colors */
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  
+  /* Border Colors */
+  --border-color: #E5E7EB;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
 /* Base styles */
 .expenses-container {
   max-width: 1000px;
@@ -34,7 +62,7 @@
 }
 
 .tab-button.active {
-  background-color: #C26B1B;
+  background-color: var(--brand-primary, #C26B1B);
   color: white;
 }
 
@@ -66,14 +94,14 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #4B5563;
+  color: var(--text-secondary, #4B5563);
   margin-bottom: 0.5rem;
 }
 
 .form-hint {
   display: block;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: var(--text-secondary, #6B7280);
   margin-top: 0.25rem;
 }
 
@@ -94,7 +122,7 @@
   left: 12px;
   font-size: 1rem;
   font-weight: 700;
-  color: #B45309;
+  color: var(--brand-primary-dark, #B45309);
 }
 
 .form-input {
@@ -124,7 +152,7 @@ select.form-input {
 }
 
 .form-input:focus {
-  border-color: #C26B1B;
+  border-color: var(--brand-primary, #C26B1B);
   box-shadow: 0 0 0 2px rgba(194, 107, 27, 0.2);
 }
 
@@ -155,24 +183,24 @@ select.form-input {
   text-align: center;
 }
 
-.btn-primary {
-  background-color: #C26B1B;
+.btn-primary { 
+  background-color: var(--brand-primary, #C26B1B);
   color: white;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #A45615;
+  background-color: var(--brand-primary-dark, #A45615);
 }
 
 .btn-secondary {
-  background-color: #F5F5F5;
-  color: #111827;
-  border: 1px solid #E5E7EB;
+  background-color: var(--brand-secondary, #F5F5F5);
+  color: var(--text-primary, #111827);
+  border: 1px solid var(--border-color, #E5E7EB);
 }
 
 .btn-secondary:hover {
-  background-color: #E5E7EB;
+  background-color: var(--border-color, #E5E7EB);
 }
 
 /* Remove number input arrows */
@@ -306,6 +334,7 @@ input[type=number] {
   justify-content: center;
 }
 
+/* Use the shared UI button styles but keep specific sizing for the table */
 .edit-button, .delete-button {
   padding: 6px 12px;
   border-radius: 4px;
@@ -318,21 +347,38 @@ input[type=number] {
   text-align: center;
 }
 
+/* Use the brand-primary color from shared UI for the edit button */
 .edit-button {
-  background-color: #C26B1B;
+  background-color: var(--brand-primary, #C26B1B);
   color: white;
 }
 
 .edit-button:hover {
-  background-color: #A45615;
+  background-color: var(--brand-primary-dark, #A45615);
 }
 
+/* Use the brand-secondary color from shared UI for the delete button */
 .delete-button {
-  background-color: #F5F5F5;
-  color: #111827;
-  border: 1px solid #E5E7EB;
+  background-color: var(--brand-secondary, #F5F5F5);
+  color: var(--text-primary, #111827);
+  border: 1px solid var(--border-color, #E5E7EB);
 }
 
 .delete-button:hover {
-  background-color: #E5E7EB;
+  background-color: var(--border-color, #E5E7EB);
+}
+
+/* User info styles */
+.user-info {
+  margin-bottom: 1.5rem;
+  padding: 12px 16px;
+  background-color: var(--brand-secondary, #F5F5F5);
+  border-radius: var(--border-radius-md, 8px);
+  border-left: 4px solid var(--brand-primary, #C26B1B);
+}
+
+.user-info p {
+  margin: 0;
+  color: var(--text-primary, #111827);
+  font-size: 0.95rem;
 } 

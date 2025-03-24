@@ -8,6 +8,7 @@ import { BudgetAllocationComponent } from './components/budget-allocation/budget
 import { HeaderComponent } from './components/header/header.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { LogoComponent } from '../assets/logo';
+import { BudgetPlannerApiService } from './services/budget-planner-api.service';
 
 const COMPONENTS = [
   ButtonComponent,
@@ -27,6 +28,9 @@ const COMPONENTS = [
   ],
   exports: [
     ...COMPONENTS
+  ],
+  providers: [
+    BudgetPlannerApiService
   ]
 })
 export class SharedUiModule {
