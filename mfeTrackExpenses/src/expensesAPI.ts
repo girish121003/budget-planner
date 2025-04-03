@@ -54,7 +54,10 @@ export const getExpenses = async (userId: string | number): Promise<Expense[]> =
 
 export const getCategories = async (): Promise<Category[]> => {
   try {
+    console.log('Fetching categories from API...');
     const response = await axios.get(`${API_BASE_URL}/categories`);
+    console.log('Raw API response:', response);
+    console.log('Categories response data:', response.data);
     return response.data.data || [];
   } catch (error) {
     console.error('Error fetching categories:', error);
@@ -107,6 +110,29 @@ export const createExpense = async (expense: Omit<Expense, 'id'>, userId: string
     return response.data.data;
   } catch (error) {
     console.error('Error creating expense:', error);
+    throw error;
+  }
+};
+
+/**
+ * Delete an expense by ID
+ * @param id The ID of the expense to delete
+ * @param userId The user ID for authorization
+ * @returns True if successful, throws error otherwise
+ */
+export const deleteExpense = async (id: string | number, userId: string | number): Promise<boolean> => {
+  try {
+    console.log(`Deleting expense with ID: ${id} for user: ${userId}`);
+    
+    // Call the delete endpoint with the expense ID
+    const response = await axios.delete(`${API_BASE_URL}/expenses/${id}?user_id=${userId}`);
+    
+    console.log('Delete API response:', response.data);
+    
+    // Return true if successful
+    return true;
+  } catch (error) {
+    console.error(`Error deleting expense with ID: ${id}`, error);
     throw error;
   }
 };

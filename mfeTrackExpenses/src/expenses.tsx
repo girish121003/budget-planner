@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './expenses.css';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { getExpenses, getCategories, getBudgetsByUserId, createExpense, Expense, Category, Budget, User } from './expensesAPI';
+import { getExpenses, getCategories, getBudgetsByUserId, createExpense, deleteExpense, Expense, Category, Budget, User } from './expensesAPI';
+import { ConfirmationModal } from './components/ConfirmationModal';
 
 function Expenses() {
 
@@ -20,6 +21,23 @@ function Expenses() {
     notes: ''
   });
 
+  // Add state for delete confirmation modal
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [expenseToDelete, setExpenseToDelete] = useState<string | number | null>(null);
+
+  // Modal state
+  const [modalConfig, setModalConfig] = useState<{
+    isOpen: boolean;
+    title: string;
+    message: string;
+    buttons: { text: string; type: 'primary' | 'secondary'; onClick: () => void; }[];
+  }>({
+    isOpen: false,
+    title: '',
+    message: '',
+    buttons: []
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,6 +48,8 @@ function Expenses() {
         // Verify that expenses is an array before setting state
         if (Array.isArray(expensesData)) {
           console.log('Expenses data:', expensesData); // Log the structure
+          console.log('Sample expense category_id:', expensesData[0]?.category_id);
+          console.log('Sample expense categoryId:', expensesData[0]?.categoryId);
           setExpenses(expensesData);
         } else {
           console.error('Expenses data is not an array:', expensesData);
@@ -38,10 +58,14 @@ function Expenses() {
         
         // Fetch all categories
         const categoriesData = await getCategories();
+        console.log('Categories data:', categoriesData);
+        console.log('Sample category:', categoriesData[0]);
+        console.log('Categories array length:', categoriesData?.length || 0);
         setCategories(categoriesData || []);
 
         // Get budgets with UUID
         const budgetsData = await getBudgetsByUserId('550e8400-e29b-41d4-a716-446655440000');
+        console.log('Budgets data:', budgetsData);
         setBudgets(budgetsData || []);
         setLoading(false);
       } catch (err) {
@@ -54,11 +78,7 @@ function Expenses() {
     fetchData();
   }, []);
 
-  // Get category ID from expense, handling different formats
-  const getCategoryId = (expense: Expense): string => {
-    return String(expense.category_id || expense.categoryId || '');
-  };
-  
+
   // Get budget ID from expense, handling different formats
   const getBudgetId = (expense: Expense): string => {
     return String(expense.budget_id || expense.budgetId || '');
@@ -66,14 +86,41 @@ function Expenses() {
 
   // Get category name by ID - with additional null checks
   const getCategoryName = (expense: Expense): string => {
-    if (!categories || categories.length === 0) return `Unknown Category`;
-    const categoryId = getCategoryId(expense);
-    if (!categoryId) return `Unknown Category`;
+    console.log('Getting category name for expense:', expense);
+    console.log('Current categories:', categories);
     
-    const category = categories.find(c => c && c.id === categoryId);
+    if (!categories || categories.length === 0) {
+      console.log('No categories available');
+      return `Unknown Category`;
+    }
+    
+    const categoryId = getCategoryId(expense);
+    console.log('Looking for category with ID:', categoryId);
+    console.log('Categories:', categories);
+    
+    if (!categoryId) {
+      console.log('No category ID found in expense');
+      return `Unknown Category`;
+    }
+    
+    const category = categories.find(c => {
+      console.log('Comparing category:', c);
+      console.log('Comparing IDs:', String(c.id), 'vs', String(categoryId));
+      return String(c.id) === String(categoryId);
+    });
+    
+    console.log('Found category:', category);
+    
     return category ? category.name : `Category ${categoryId}`;
   };
-  
+    // Get category ID from expense, handling different formats
+    const getCategoryId = (expense: Expense): string => {
+      const categoryId = String(expense.category_id || expense.categoryId || '');
+      console.log('Getting category ID for expense:', expense);
+      console.log('Extracted category ID:', categoryId);
+      return categoryId;
+    };
+    
   // Get budget name by ID - updated to work with string IDs and null checks
   const getBudgetName = (expense: Expense): string => {
     if (!budgets || budgets.length === 0) return `Unknown Budget`;
@@ -126,77 +173,133 @@ function Expenses() {
     });
   };
 
+  // Close modal helper
+  const closeModal = () => {
+    setModalConfig(prev => ({ ...prev, isOpen: false }));
+  };
+
+  // Handle delete confirmation
+  const handleDelete = async (id: string | number) => {
+    setModalConfig({
+      isOpen: true,
+      title: 'Delete Expense',
+      message: 'Are you sure you want to delete this expense? This action cannot be undone.',
+      buttons: [
+        {
+          text: 'Cancel',
+          type: 'secondary',
+          onClick: closeModal
+        },
+        {
+          text: 'Delete',
+          type: 'primary',
+          onClick: async () => {
+            try {
+              await deleteExpense(id, '550e8400-e29b-41d4-a716-446655440000');
+              setExpenses(expenses.filter(expense => String(expense.id) !== String(id)));
+              closeModal();
+              alert('Expense deleted successfully!');
+            } catch (error) {
+              console.error('Error deleting expense:', error);
+              alert('Failed to delete expense. Please try again.');
+              closeModal();
+            }
+          }
+        }
+      ]
+    });
+  };
+
+  // Handle form submission
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     
     if (activeTab !== 'expense') {
-      // Handle income submission if needed
       return;
     }
     
+    // Validate form data
+    if (!formData.amount || !formData.description || !formData.categoryId || !formData.budgetId) {
+      alert('Please fill out all required fields');
+      return;
+    }
+
+    // Prepare the expense data
+    const expenseData = {
+      budget_id: formData.budgetId,
+      category_id: formData.categoryId,
+      amount: parseFloat(formData.amount),
+      description: formData.description,
+      date: formData.date,
+      notes: formData.notes || undefined
+    };
+
     try {
-      // Validate form data
-      if (!formData.amount || !formData.description || !formData.categoryId || !formData.budgetId) {
-        alert('Please fill out all required fields');
-        return;
-      }
-      
-      // Log the form data to verify values
-      console.log("Submitting form data:", formData);
-      
-      // Prepare the expense data for submission using snake_case keys for API
-      const expenseData = {
-        budget_id: formData.budgetId, // Use snake_case as expected by API
-        category_id: formData.categoryId, // Use snake_case as expected by API
-        amount: parseFloat(formData.amount),
-        description: formData.description,
-        date: formData.date,
-        notes: formData.notes || undefined
-      };
-      
-      console.log("Transformed expense data for API:", expenseData);
-      
-      // Submit the expense data
       const createdExpense = await createExpense(expenseData, '550e8400-e29b-41d4-a716-446655440000');
-      
-      // Update the UI with the new expense
       setExpenses(prevExpenses => [...prevExpenses, createdExpense]);
       
-      // Reset the form
-      handleReset();
-      
-      // Show success message
-      alert('Expense added successfully!');
+      // Show success modal
+      setModalConfig({
+        isOpen: true,
+        title: 'Success',
+        message: 'Expense added successfully!',
+        buttons: [
+          {
+            text: 'OK',
+            type: 'primary',
+            onClick: () => {
+              closeModal();
+              handleReset();
+            }
+          }
+        ]
+      });
     } catch (error) {
       console.error('Error submitting expense:', error);
-      alert('Failed to add expense. Please try again.');
+      setModalConfig({
+        isOpen: true,
+        title: 'Error',
+        message: 'Failed to add expense. Please try again.',
+        buttons: [
+          {
+            text: 'OK',
+            type: 'primary',
+            onClick: closeModal
+          }
+        ]
+      });
     }
   };
-  
+
+  // Handle edit
   const handleEdit = (expense: Expense) => {
-    // Set the form data to the expense being edited
-    setFormData({
-      description: expense.description || '',
-      amount: typeof expense.amount === 'number' ? expense.amount.toString() : expense.amount || '',
-      budgetId: getBudgetId(expense),
-      categoryId: getCategoryId(expense),
-      date: expense.date || new Date().toISOString().split('T')[0],
-      notes: expense.notes || ''
+    setModalConfig({
+      isOpen: true,
+      title: 'Edit Expense',
+      message: 'Are you sure you want to edit this expense?',
+      buttons: [
+        {
+          text: 'Cancel',
+          type: 'secondary',
+          onClick: closeModal
+        },
+        {
+          text: 'Edit',
+          type: 'primary',
+          onClick: () => {
+            setFormData({
+              description: expense.description || '',
+              amount: typeof expense.amount === 'number' ? expense.amount.toString() : expense.amount || '',
+              budgetId: String(expense.budget_id || expense.budgetId || ''),
+              categoryId: String(expense.category_id || expense.categoryId || ''),
+              date: expense.date || new Date().toISOString().split('T')[0],
+              notes: expense.notes || ''
+            });
+            closeModal();
+          }
+        }
+      ]
     });
-    // You might want to add state to track the expense being edited
-    // and change the submit button to "Update" instead of "Add"
-  };
-  
-  const handleDelete = (id: any) => {
-    // Implement delete functionality here
-    // You could call an API function like deleteExpense(id)
-    // and then refresh the expenses list
-    if (window.confirm('Are you sure you want to delete this expense?')) {
-      console.log('Deleting expense with ID:', id);
-      // TODO: Implement actual delete functionality
-      // For now, just filter out the expense from the state
-      setExpenses(expenses.filter(expense => String(expense.id) !== String(id)));
-    }
   };
 
   const renderExpenses = () => {
@@ -217,26 +320,26 @@ function Expenses() {
           <table className="expenses-table">
             <thead>
               <tr>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Budget</th>
                 <th>Category</th>
+                <th>Budget</th>
+                <th>Amount</th>
                 <th>Date</th>
+                <th>Description</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {expenses.map((expense) => expense && (
                 <tr key={String(expense.id)}>
-                  <td>{expense.description}</td>
-                  <td className="amount">${formatAmount(expense.amount)}</td>
-                  <td>{getBudgetName(expense)}</td>
                   <td>
                     <span className="category-badge">
                       {getCategoryName(expense)}
                     </span>
                   </td>
+                  <td>{getBudgetName(expense)}</td>
+                  <td className="amount">${formatAmount(expense.amount)}</td>
                   <td>{new Date(expense.date).toLocaleDateString()}</td>
+                  <td>{expense.description}</td>
                   <td>
                     <div className="action-buttons">
                       <button 
@@ -450,6 +553,14 @@ function Expenses() {
       <div className="expenses-table-section">
         {renderExpenses()}
       </div>
+
+      {/* Updated dynamic modal */}
+      <ConfirmationModal
+        isOpen={modalConfig.isOpen}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        buttons={modalConfig.buttons}
+      />
     </div>
   );
 }
