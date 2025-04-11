@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
             <h2 class="user-name">John Doe</h2>
             <p class="user-income">Total Monthly Income: $5000</p>
           </div>
-          <button class="create-budget-btn">Create Budget</button>
+          <button class="create-budget-btn" routerLink="user-profile">View Profile</button>
         </div>
 
         <!-- Budget Allocation and Distribution Section -->
@@ -608,6 +608,4 @@ import { RouterModule } from '@angular/router';
     }
   `]
 })
-export class RemoteEntryComponent {
-  // No longer need the navigationItems array since we removed the Quick Actions section
-}
+export class RemoteEntryComponent {}

@@ -15,18 +15,7 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeSettings', process.env.NODE_ENV === 'production' 
-      ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.js'
-      : 'http://localhost:4201/remoteEntry.mjs'],
-    ['mfeReports', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.js'
-      : 'http://localhost:4202/remoteEntry.mjs'],
-    ['mfeBudget', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeBudget/remoteEntry.js'
-      : 'http://localhost:4203/remoteEntry.mjs'],
-    ['mfeDashboard', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
-      : 'http://localhost:4205/remoteEntry.mjs']
+    ['mfeDashboard', 'http://localhost:4205/remoteEntry.mjs']
   ],
   shared: (libraryName, sharedConfig) => {
     const sharedLibraries = {
@@ -40,8 +29,24 @@ const config: ModuleFederationConfig = {
       '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true },
       'tslib': { singleton: true, strictVersion: true, eager: true }
     };
-    
-    return sharedLibraries[libraryName] || sharedConfig;
+
+    switch (libraryName) {
+      case '@angular/core':
+      case '@angular/common':
+      case '@angular/common/http':
+      case '@angular/router':
+      case '@angular/forms':
+      case '@angular/platform-browser':
+      case '@angular/platform-browser-dynamic':
+      case '@angular/compiler':
+      case '@angular/animations':
+        return sharedConfig;
+      case 'rxjs':
+      case 'tslib':
+        return sharedConfig;
+      default:
+        return false;
+    }
   }
 };
 

@@ -7,6 +7,11 @@ export const appRoutes: Route[] = [
       import('mfeDashboard/Routes').then((m) => m.remoteRoutes),
   },
   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('mfeDashboard/Routes').then((m) => m.remoteRoutes),
+  },
+  {
     path: 'mfeSettings',
     loadChildren: () =>
       import('mfeSettings/Routes').then((m) => m.remoteRoutes),
@@ -21,7 +26,6 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('mfeBudget/Routes').then((m) => m.remoteRoutes),
   },
- 
   {
     path: '**',
     redirectTo: '',
