@@ -15,7 +15,7 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeDashboard', 'http://localhost:4205/remoteEntry.mjs']
+    ['mfeDashboard', 'http://localhost:8081/remoteEntry.mjs']
   ],
   shared: (libraryName, sharedConfig) => {
     if (libraryName === 'rxjs') {

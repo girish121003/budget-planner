@@ -5,12 +5,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () =>
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: 'http://localhost:8081/remoteEntry.js',
-        exposedModule: './DashboardModule'
-      })
-      .then(m => m.DashboardModule)
+      import('mfeDashboard/Routes').then((m) => m.remoteRoutes)
   },
   {
     path: '',

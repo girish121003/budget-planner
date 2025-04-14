@@ -4,7 +4,7 @@ const { withModuleFederation } = require('@nx/angular/module-federation');
 const dashboardConfig = {
   name: 'mfeDashboard',
   exposes: {
-    './Module': './mfeDashboard/src/app/remote-entry/entry.module.ts'
+    './Routes': './mfeDashboard/src/app/remote-entry/entry.routes.ts'
   },
   shared: {
     '@angular/core': { singleton: true, strictVersion: true },
