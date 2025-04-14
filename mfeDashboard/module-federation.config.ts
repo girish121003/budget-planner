@@ -6,19 +6,46 @@ const config: ModuleFederationConfig = {
     './Routes': 'mfeDashboard/src/app/remote-entry/entry.routes.ts',
   },
   shared: (libraryName, sharedConfig) => {
-    const sharedLibraries = {
-      '@angular/core': { singleton: true, strictVersion: true, eager: true },
-      '@angular/core/primitives/signals': { singleton: true, strictVersion: true, eager: true },
-      '@angular/core/primitives/di': { singleton: true, strictVersion: true, eager: true }, 
-      '@angular/core/primitives/event-dispatch': { singleton: true, strictVersion: true, eager: true },
-      '@angular/common': { singleton: true, strictVersion: true, eager: true },
-      '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
-      '@angular/router': { singleton: true, strictVersion: true, eager: true },
-      '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true },
-      'tslib': { singleton: true, strictVersion: true, eager: true }
-    };
-    
-    return sharedLibraries[libraryName] || sharedConfig;
+    if (libraryName === 'rxjs') {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true,
+        requiredVersion: false,
+        shareConfig: {
+          singleton: true,
+          strictVersion: true,
+          eager: true,
+          requiredVersion: false
+        },
+        lib: require('rxjs')
+      };
+    }
+
+    if ([
+      '@angular/core',
+      '@angular/common',
+      '@angular/common/http',
+      '@angular/router',
+      '@angular/forms',
+      '@angular/platform-browser',
+      '@angular/platform-browser-dynamic',
+      '@angular/compiler',
+      '@angular/animations',
+      'tslib'
+    ].includes(libraryName)) {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true
+      };
+    }
+
+    return false;
+  },
+  library: {
+    type: 'module',
+    name: 'mfeDashboard'
   }
 };
 

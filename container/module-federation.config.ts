@@ -15,33 +15,46 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeSettings', process.env.NODE_ENV === 'production' 
-      ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.js'
-      : 'http://localhost:4201/remoteEntry.mjs'],
-    ['mfeReports', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.js'
-      : 'http://localhost:4202/remoteEntry.mjs'],
-    ['mfeBudget', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeBudget/remoteEntry.js'
-      : 'http://localhost:4203/remoteEntry.mjs'],
-    ['mfeDashboard', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
-      : 'http://localhost:4205/remoteEntry.mjs']
+    ['mfeDashboard', 'http://localhost:8081/remoteEntry.mjs'],
+    ['mfeTrackExpenses', 'http://localhost:4201/remoteEntry.js'] 
   ],
   shared: (libraryName, sharedConfig) => {
-    const sharedLibraries = {
-      '@angular/core': { singleton: true, strictVersion: true, eager: true },
-      '@angular/core/primitives/signals': { singleton: true, strictVersion: true, eager: true },
-      '@angular/core/primitives/di': { singleton: true, strictVersion: true, eager: true },
-      '@angular/core/primitives/event-dispatch': { singleton: true, strictVersion: true, eager: true },
-      '@angular/common': { singleton: true, strictVersion: true, eager: true },
-      '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
-      '@angular/router': { singleton: true, strictVersion: true, eager: true },
-      '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true },
-      'tslib': { singleton: true, strictVersion: true, eager: true }
-    };
-    
-    return sharedLibraries[libraryName] || sharedConfig;
+    if (libraryName === 'rxjs') {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true,
+        requiredVersion: false,
+        shareConfig: {
+          singleton: true,
+          strictVersion: true,
+          eager: true,
+          requiredVersion: false
+        },
+        lib: require('rxjs')
+      };
+    }
+
+    if ([
+      '@angular/core',
+      '@angular/common',
+      '@angular/common/http',
+      '@angular/router',
+      '@angular/forms',
+      '@angular/platform-browser',
+      '@angular/platform-browser-dynamic',
+      '@angular/compiler',
+      '@angular/animations',
+      'tslib'
+    ].includes(libraryName)) {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true
+      };
+    }
+
+    return false;
   }
 };
 

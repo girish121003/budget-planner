@@ -9,222 +9,60 @@ import { RouterModule } from '@angular/router';
   template: `
     <div class="dashboard-container">
       <div class="dashboard-content">
-        <!-- User Profile Section -->
         <div class="profile-section">
           <div class="avatar-container">
             <div class="avatar">
-              <img src="assets/shared/icons/user-profile.png" alt="User Profile" class="profile-icon">
+            <img src="/assets/shared/icons/user-profile.png" alt="Profile" class="profile-icon">
             </div>
           </div>
           <div class="user-info">
             <h2 class="user-name">John Doe</h2>
-            <p class="user-income">Total Monthly Income: $5000</p>
+            <p class="user-income">Monthly Income: $5,000</p>
           </div>
-          <button class="create-budget-btn">Create Budget</button>
+          <button class="create-budget-btn" routerLink="user-profile">View Profile</button>
         </div>
 
-        <!-- Budget Allocation and Distribution Section -->
         <div class="budget-layout">
-          <!-- Budget Allocation Section -->
-          <section class="budget-section">
-            <h2 class="section-title">Budget Allocation</h2>
-            <p class="section-description">Visual representation of your budget distribution</p>
-            
-            <button class="action-button">Access Income</button>
-            
+          <div class="budget-section">
+            <h2 class="section-title">Monthly Budget Overview</h2>
+            <p class="section-description">Track your monthly spending and savings</p>
             <div class="category-cards">
               <div class="category-card">
-                <h3>Housing</h3>
-                <p class="amount">$1500</p>
+                <h3>Total Budget</h3>
+                <p class="amount">$3,500</p>
               </div>
               <div class="category-card">
-                <h3>Transportation</h3>
-                <p class="amount">$800</p>
+                <h3>Spent</h3>
+                <p class="amount">$2,100</p>
               </div>
               <div class="category-card">
-                <h3>Food</h3>
-                <p class="amount">$500</p>
+                <h3>Remaining</h3>
+                <p class="amount">$1,400</p>
+              </div>
+              <div class="category-card">
+                <h3>Savings</h3>
+                <p class="amount">$1,500</p>
               </div>
             </div>
-          </section>
+          </div>
 
-          <!-- Budget Distribution Section -->
-          <section class="distribution-section">
-            <h2 class="section-title">Budget Distribution</h2>
-            
+          <div class="distribution-section">
+            <h2 class="section-title">Expense Distribution</h2>
+            <p class="section-description">See where your money goes</p>
             <div class="chart-container">
-              <div class="chart-header">Amount</div>
+              <div class="chart-header">Monthly Expenses</div>
               <div class="pie-chart">
-                <svg viewBox="0 0 100 100" class="pie">
-                  <!-- Green slice (55%) -->
-                  <circle r="25" cx="50" cy="50" fill="transparent"
-                    stroke="#9de498"
-                    stroke-width="50"
-                    stroke-dasharray="172.8 345.6"
-                    stroke-dashoffset="0"></circle>
-                  
-                  <!-- Brown slice (15%) -->
-                  <circle r="25" cx="50" cy="50" fill="transparent"
-                    stroke="#a08f65"
-                    stroke-width="50"
-                    stroke-dasharray="47.1 345.6"
-                    stroke-dashoffset="-172.8"></circle>
-                  
-                  <!-- Blue slice (30%) -->
-                  <circle r="25" cx="50" cy="50" fill="transparent"
-                    stroke="#5b718c"
-                    stroke-width="50"
-                    stroke-dasharray="94.2 345.6"
-                    stroke-dashoffset="-219.9"></circle>
+                <svg class="pie" viewBox="0 0 32 32">
+                  <circle r="16" cx="16" cy="16" fill="#4CAF50" />
+                  <circle r="8" cx="16" cy="16" fill="#2196F3" />
                 </svg>
               </div>
               <div class="categories-label">Categories</div>
             </div>
-          </section>
+          </div>
         </div>
 
-        <!-- Key Stats and User Feedback Layout -->
-        <div class="stats-feedback-layout">
-          <!-- Key Stats Section -->
-          <section class="stats-section">
-            <h2 class="section-title">Key Stats</h2>
-            
-            <div class="stats-list">
-              <div class="stat-item">
-                <div class="stat-icon expenses-icon">
-                  <img src="assets/shared/icons/expenses-icon.png" alt="Expenses">
-                </div>
-                <div class="stat-info">
-                  <span class="stat-name">Total Expenses</span>
-                </div>
-                <div class="stat-value">$2000</div>
-              </div>
-              
-              <div class="stat-item">
-                <div class="stat-icon balance-icon">
-                  <img src="assets/shared/icons/summary-icon.png" alt="Balance">
-                </div>
-                <div class="stat-info">
-                  <span class="stat-name">Remaining Balance</span>
-                </div>
-                <div class="stat-value">$3000</div>
-              </div>
-              
-              <div class="stat-item">
-                <div class="stat-icon savings-icon">
-                  <img src="assets/shared/icons/settings-icon.png" alt="Savings">
-                </div>
-                <div class="stat-info">
-                  <span class="stat-name">Savings</span>
-                </div>
-                <div class="stat-value">$1000</div>
-              </div>
-            </div>
-          </section>
-
-          <!-- User Feedback Section -->
-          <section class="feedback-section">
-            <h2 class="section-title">User Feedback</h2>
-            <p class="section-description">See what our users say about Budget Buddy</p>
-            
-            <div class="feedback-list">
-              <div class="feedback-card">
-                <div class="user-info">
-                  <div class="user-avatar"></div>
-                  <span class="user-name">Alice Smith</span>
-                  <div class="rating">★★★★★</div>
-                </div>
-                <p class="feedback-text">Great app! It helped me save a lot</p>
-              </div>
-              
-              <div class="feedback-card">
-                <div class="user-info">
-                  <div class="user-avatar"></div>
-                  <span class="user-name">Bob Johnson</span>
-                  <div class="rating">★★★★★</div>
-                </div>
-                <p class="feedback-text">Very user-friendly and insightful</p>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- Dummy Section 1 for Scroll Testing -->
-        <div class="dummy-section">
-          <section class="dummy-content">
-            <h2 class="section-title">Financial Tips</h2>
-            <p class="section-description">Helpful advice to improve your financial health</p>
-            
-            <div class="tips-container">
-              <div class="tip-card">
-                <h3>Create an Emergency Fund</h3>
-                <p>Set aside 3-6 months of expenses in case of unexpected events. This provides a financial safety net and peace of mind.</p>
-              </div>
-              
-              <div class="tip-card">
-                <h3>Pay Off High-Interest Debt</h3>
-                <p>Prioritize paying down credit cards and other high-interest loans to save money on interest payments over time.</p>
-              </div>
-              
-              <div class="tip-card">
-                <h3>Automate Your Savings</h3>
-                <p>Set up automatic transfers to savings accounts on payday to ensure consistent saving without thinking about it.</p>
-              </div>
-              
-              <div class="tip-card">
-                <h3>Follow the 50/30/20 Rule</h3>
-                <p>Allocate 50% of income to necessities, 30% to wants, and 20% to savings and debt repayment for balanced finances.</p>
-              </div>
-              
-              <div class="tip-card">
-                <h3>Review Subscriptions Regularly</h3>
-                <p>Take inventory of recurring subscriptions and cancel those you don't use to eliminate unnecessary expenses.</p>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- Dummy Section 2 for Scroll Testing -->
-        <div class="dummy-section">
-          <section class="dummy-content">
-            <h2 class="section-title">Financial Calendar</h2>
-            <p class="section-description">Plan your financial goals throughout the year</p>
-            
-            <div class="calendar-container">
-              <div class="month-card">
-                <h3>January</h3>
-                <p>Set annual financial goals and create a yearly budget plan.</p>
-              </div>
-              
-              <div class="month-card">
-                <h3>April</h3>
-                <p>Tax season - prepare and file your taxes before the deadline.</p>
-              </div>
-              
-              <div class="month-card">
-                <h3>July</h3>
-                <p>Mid-year financial checkup - review progress on your annual goals.</p>
-              </div>
-              
-              <div class="month-card">
-                <h3>September</h3>
-                <p>Back-to-school budgeting and expense planning.</p>
-              </div>
-              
-              <div class="month-card">
-                <h3>December</h3>
-                <p>Year-end tax planning and holiday budgeting strategies.</p>
-              </div>
-              
-              <div class="month-card long-text">
-                <h3>Financial Planning Tips</h3>
-                <p>Remember to review your budget regularly and adjust as needed. Track your expenses to identify areas where you can cut back. Set specific, measurable financial goals with deadlines. Consider working with a financial advisor for personalized advice. Build an investment strategy that aligns with your long-term goals.</p>
-                <p>Long-term financial planning is essential for securing your future. Start by setting clear goals for retirement, education, or major purchases. Then, develop a realistic plan to achieve these goals through consistent saving and strategic investing. Review and adjust your plan periodically as your life circumstances change.</p>
-                <p>Financial literacy is key to making informed decisions about your money. Take time to educate yourself about basic financial concepts, investment options, and tax strategies. This knowledge will empower you to take control of your finances and build a secure future for yourself and your family.</p>
-              </div>
-            </div>
-          </section>
-        </div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   `,
@@ -608,6 +446,4 @@ import { RouterModule } from '@angular/router';
     }
   `]
 })
-export class RemoteEntryComponent {
-  // No longer need the navigationItems array since we removed the Quick Actions section
-}
+export class RemoteEntryComponent {}
