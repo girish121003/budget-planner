@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+  <div class="dashboard-content">
+    <div class="profile-section">
+      <div class="avatar-container">
+        <div class="avatar">
+          <img src="/assets/shared/icons/user-profile.png" alt="Profile" class="profile-icon">
+        </div>
+      </div>
+      <div class="user-info">
+        <h2 class="user-name">John Doe</h2>
+        <p class="user-income">Monthly Income: $5,000</p>
+      </div>
+      <button class="create-budget-btn" routerLink="user-profile">View Profile</button>
+    </div>
+
+    <div class="budget-layout">
+      <div class="budget-section">
+        <h2 class="section-title">Monthly Budget Overview</h2>
+        <p class="section-description">Track your monthly spending and savings</p>
+        <div class="category-cards">
+          <div class="category-card">
+            <h3>Total Budget</h3>
+            <p class="amount">$3,500</p>
+          </div>
+          <div class="category-card">
+            <h3>Spent</h3>
+            <p class="amount">$2,100</p>
+          </div>
+          <div class="category-card">
+            <h3>Remaining</h3>
+            <p class="amount">$1,400</p>
+          </div>
+          <div class="category-card">
+            <h3>Savings</h3>
+            <p class="amount">$1,500</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="distribution-section">
+        <h2 class="section-title">Expense Distribution</h2>
+        <p class="section-description">See where your money goes</p>
+        <div class="chart-container">
+          <div class="chart-header">Monthly Expenses</div>
+          <div class="pie-chart">
+            <svg class="pie" viewBox="0 0 32 32">
+              <circle r="16" cx="16" cy="16" fill="#4CAF50" />
+              <circle r="8" cx="16" cy="16" fill="#2196F3" />
+            </svg>
+          </div>
+          <div class="categories-label">Categories</div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div> 
