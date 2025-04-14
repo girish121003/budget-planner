@@ -1,13 +1,53 @@
-<nav class="bg-white shadow-sm">
-  <div class="container">
-    <ul class="flex items-center p-3">
-      <li class="mr-4"><a routerLink="mfeSettings" class="text-secondary hover:text-primary transition-base">Settings</a></li>
-      <li class="mr-4"><a routerLink="mfeReports" class="text-secondary hover:text-primary transition-base">Reports</a></li>
-      <li class="mr-4"><a routerLink="mfeBudget" class="text-secondary hover:text-primary transition-base">Budget</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="app-container" [class.drawer-open]="isDrawerOpen">
+      <header class="app-header">
+        <div class="logo-container">
+            <img src="assets/shared/icons/recieve-cash.png" alt="Budget Planner" class="logo">
+            <h1>{{ title }}</h1>
+        </div>
+        
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li>
+              <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li>
+              <a routerLink="/mfeBudget" routerLinkActive="active">Budget</a>
+            </li>
+            <li>
+              <a routerLink="/mfeReports" routerLinkActive="active">Reports</a>
+            </li>
+            <li>
+              <a routerLink="/expense" routerLinkActive="active">Expense</a>
+            </li>
+            <li>
+              <a routerLink="/mfeSettings" routerLinkActive="active">Settings</a>
+            </li>
+          </ul>
+        </nav>
 
-<main class="container mt-4">
-  <router-outlet></router-outlet>
-</main>
+        <div class="menu-container">
+          <button 
+            class="menu-button"
+            aria-label="Open menu"
+            (click)="toggleDrawer()"
+          >
+          <img [src]="getAssetPath('icons/hamburger.png')" alt="" class="menu-icon">
+          </button>
+        </div>
+      </header>
+      
+      <app-drawer
+        [isOpen]="isDrawerOpen"
+        [navigationItems]="navigationItems"
+        (drawerClosed)="closeDrawer()"
+        (navigate)="navigateTo($event)"
+      ></app-drawer>
+      
+      <div class="content-wrapper">
+        <main class="main-content">
+          <router-outlet></router-outlet>
+        </main>
+
+        <app-footer></app-footer>
+      </div>
+    </div>

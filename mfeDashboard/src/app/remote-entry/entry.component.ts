@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
         <div class="profile-section">
           <div class="avatar-container">
             <div class="avatar">
-              <img src="assets/profile-icon.svg" alt="Profile" class="profile-icon">
+            <img src="/assets/shared/icons/user-profile.png" alt="Profile" class="profile-icon">
             </div>
           </div>
           <div class="user-info">

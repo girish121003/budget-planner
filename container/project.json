@@ -16,12 +16,17 @@
         "polyfills": ["zone.js"],
         "tsConfig": "container/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "container/src/favicon.ico",
-          "container/src/assets"
-        ],
-        "styles": ["container/src/styles.scss"],
-        "scripts": []
+      "assets": [
+        "container/src/favicon.ico",
+        "container/src/assets",
+        {
+          "glob": "**/*",
+          "input": "libs/shared-ui/src/assets",
+          "output": "assets/shared"
+        }
+      ],
+      "styles": ["container/src/styles.scss"],
+      "scripts": []
       },
       "configurations": {
         "production": {

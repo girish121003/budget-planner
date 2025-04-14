@@ -1,68 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
+import { AssetsService, DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
 
 @Component({
   standalone: true,
   imports: [RouterModule, CommonModule, DrawerComponent, FooterComponent],
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'budget-planner-root',
-  template: `
-    <div class="app-container" [class.drawer-open]="isDrawerOpen">
-      <header class="app-header">
-        <div class="logo-container">
-          <img src="assets/shared/icons/recieve-cash.png" alt="Budget Planner" class="logo">
-          <h1>{{ title }}</h1>
-        </div>
-        
-        <nav class="main-nav">
-          <ul class="nav-links">
-            <li>
-              <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-            </li>
-            <li>
-              <a routerLink="/mfeBudget" routerLinkActive="active">Budget</a>
-            </li>
-            <li>
-              <a routerLink="/mfeReports" routerLinkActive="active">Reports</a>
-            </li>
-            <li>
-              <a routerLink="/expense" routerLinkActive="active">Expense</a>
-            </li>
-            <li>
-              <a routerLink="/mfeSettings" routerLinkActive="active">Settings</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="menu-container">
-          <button 
-            class="menu-button"
-            aria-label="Open menu"
-            (click)="toggleDrawer()"
-          >
-            <img src="assets/shared/icons/hamburger.png" alt="" class="menu-icon">
-          </button>
-        </div>
-      </header>
-      
-      <app-drawer
-        [isOpen]="isDrawerOpen"
-        [navigationItems]="navigationItems"
-        (drawerClosed)="closeDrawer()"
-        (navigate)="navigateTo($event)"
-      ></app-drawer>
-      
-      <div class="content-wrapper">
-        <main class="main-content">
-          <router-outlet></router-outlet>
-        </main>
-
-        <app-footer></app-footer>
-      </div>
-    </div>
-  `,
+  templateUrl: './app.component.html',
   styles: [`
     :host {
       display: block;
@@ -79,30 +25,46 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
       flex-direction: column;
       min-height: 100vh;
       width: 100%;
+      position: relative;
     }
 
-    .drawer-open {
-      /* Ensures content remains scrollable even with drawer open */
-      overflow-y: auto !important; 
-    }
-    
     .app-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #FAF5F2;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      width: 100%;
-      box-sizing: border-box;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
       height: 64px;
+      background-color: #FAF5F2;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
     }
-    
+
+    .content-wrapper {
+      padding-top: 64px;
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 64px - 80px);
+    }
+
+    .main-content {
+      flex: 1;
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    app-footer {
+      width: 100%;
+      margin-top: auto;
+    }
+
     .logo-container {
       display: flex;
       align-items: center;
@@ -172,22 +134,9 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
     .menu-icon {
       height: 24px;
     }
-    
-    .content-wrapper {
-      padding-top: 64px; /* Same as header height */
-      width: 100%;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .main-content {
-      flex: 1;
-      width: 100%;
-      box-sizing: border-box;
-      position: absolute;
-      z-index: 2;
-      padding: 1rem;
+
+    .drawer-open {
+      overflow-y: auto !important;
     }
   `]
 })
@@ -203,7 +152,7 @@ export class AppComponent {
     { name: 'Settings', icon: 'settings-icon.png', route: '/mfeSettings' }
   ];
   
-  constructor(private router: Router) {}
+  constructor(private router: Router, private assetsService: AssetsService) {}
   
   toggleDrawer(): void {
     this.isDrawerOpen = !this.isDrawerOpen;
@@ -215,5 +164,8 @@ export class AppComponent {
   
   navigateTo(route: string): void {
     this.router.navigateByUrl(route);
+  }
+  getAssetPath(path: string): string {
+    return this.assetsService.getAssetPath(path);
   }
 }

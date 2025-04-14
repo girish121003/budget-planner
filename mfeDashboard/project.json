@@ -18,7 +18,12 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "mfeDashboard/src/favicon.ico",
-          "mfeDashboard/src/assets"
+          "mfeDashboard/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/shared-ui/src/assets",
+            "output": "assets/shared"
+          }
         ],
         "styles": ["mfeDashboard/src/styles.scss"],
         "scripts": []
