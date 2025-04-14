@@ -15,25 +15,46 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeSettings', process.env.NODE_ENV === 'production' 
-      ? 'https://girish121003.github.io/budget-planner/mfeSettings/remoteEntry.js'
-      : 'http://localhost:4204/remoteEntry.mjs'],
-    ['mfeReports', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeReports/remoteEntry.js'
-      : 'http://localhost:4202/remoteEntry.mjs'],
-    ['mfeBudget', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeBudget/remoteEntry.js'
-      : 'http://localhost:4203/remoteEntry.mjs'],
-    ['mfeDashboard', process.env.NODE_ENV === 'production'
-      ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
-      : 'http://localhost:4201/remoteEntry.mjs']
+    ['mfeDashboard', 'https://girishsharma.github.io/budget-planner/mfeDashboard/remoteEntry.js'],
+    ['mfeTrackExpenses', 'https://girishsharma.github.io/budget-planner/mfeTrackExpenses/remoteEntry.js'] 
   ],
-  shared: {
-    '@angular/core': { singleton: true, strictVersion: true, eager: true },
-    '@angular/common': { singleton: true, strictVersion: true, eager: true },
-    '@angular/common/http': { singleton: true, strictVersion: true, eager: true },
-    '@angular/router': { singleton: true, strictVersion: true, eager: true },
-    '@angular/platform-browser': { singleton: true, strictVersion: true, eager: true }
+  shared: (libraryName, sharedConfig) => {
+    if (libraryName === 'rxjs') {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true,
+        requiredVersion: false,
+        shareConfig: {
+          singleton: true,
+          strictVersion: true,
+          eager: true,
+          requiredVersion: false
+        },
+        lib: require('rxjs')
+      };
+    }
+
+    if ([
+      '@angular/core',
+      '@angular/common',
+      '@angular/common/http',
+      '@angular/router',
+      '@angular/forms',
+      '@angular/platform-browser',
+      '@angular/platform-browser-dynamic',
+      '@angular/compiler',
+      '@angular/animations',
+      'tslib'
+    ].includes(libraryName)) {
+      return {
+        singleton: true,
+        strictVersion: true,
+        eager: true
+      };
+    }
+
+    return false;
   }
 };
 

@@ -3,13 +3,15 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Set this to your default branch
+      - gh-pages  # Changed to deploy from gh-pages branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: gh-pages  # Checkout the gh-pages branch
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -24,11 +26,11 @@ jobs:
         env:
           NODE_ENV: production
         run: |
-          npm run build container -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
-          npm run build mfeDashboard -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
-          npm run build mfeBudget -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
-          npm run build mfeReports -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
-          npm run build mfeSettings -- --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npx nx build container --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npx nx build mfeDashboard --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npx nx build mfeBudget --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npx nx build mfeReports --configuration=production --base-href=/budget-planner/ --output-hashing=none
+          npx nx build mfeSettings --configuration=production --base-href=/budget-planner/ --output-hashing=none
 
       - name: Prepare deployment
         run: |
@@ -64,4 +66,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/github-pages
-          enable_jekyll: false 
+          enable_jekyll: false
+          publish_branch: gh-pages  # Explicitly set the publish branch 

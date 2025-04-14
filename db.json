@@ -1,0 +1,165 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com"
+    }
+  ],
+  "budgets": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Monthly Budget",
+      "amount": 5000,
+      "startDate": "2025-03-01",
+      "endDate": "2025-03-31",
+      "createdAt": "2025-02-28"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Vacation Fund",
+      "amount": 2000,
+      "startDate": "2025-03-01",
+      "endDate": "2025-06-30",
+      "createdAt": "2025-02-15"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "name": "Wedding Savings",
+      "amount": 10000,
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "createdAt": "2024-12-15"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Food",
+      "color": "#FF9800"
+    },
+    {
+      "id": 2,
+      "name": "Transportation",
+      "color": "#2196F3"
+    },
+    {
+      "id": 3,
+      "name": "Housing",
+      "color": "#4CAF50"
+    },
+    {
+      "id": 4,
+      "name": "Entertainment",
+      "color": "#E91E63"
+    },
+    {
+      "id": 5,
+      "name": "Utilities",
+      "color": "#9C27B0"
+    },
+    {
+      "id": 6,
+      "name": "Healthcare",
+      "color": "#00BCD4"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "userId": 1,
+      "budgetId": 1,
+      "categoryId": 1,
+      "amount": 75.50,
+      "description": "Grocery shopping",
+      "date": "2025-03-05"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "budgetId": 1,
+      "categoryId": 2,
+      "amount": 45.20,
+      "description": "Gas for car",
+      "date": "2025-03-08"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "budgetId": 1,
+      "categoryId": 4,
+      "amount": 35.00,
+      "description": "Movie tickets",
+      "date": "2025-03-12"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "budgetId": 1,
+      "categoryId": 1,
+      "amount": 28.75,
+      "description": "Dinner out",
+      "date": "2025-03-15"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "budgetId": 2,
+      "categoryId": 4,
+      "amount": 150.00,
+      "description": "Concert tickets",
+      "date": "2025-03-20"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "budgetId": 3,
+      "categoryId": 3,
+      "amount": 1500.00,
+      "description": "Venue deposit",
+      "date": "2025-03-10"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "March 2025 Summary",
+      "startDate": "2025-03-01",
+      "endDate": "2025-03-31",
+      "createdAt": "2025-03-31"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "name": "Q1 2025 Budget Review",
+      "startDate": "2025-01-01",
+      "endDate": "2025-03-31",
+      "createdAt": "2025-04-01"
+    }
+  ],
+  "settings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "currency": "USD",
+      "theme": "light",
+      "notifications": true
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "currency": "EUR",
+      "theme": "dark",
+      "notifications": false
+    }
+  ]
+} 

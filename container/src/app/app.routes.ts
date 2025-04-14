@@ -1,10 +1,17 @@
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/module-federation';
+import { ExpenseWrapperComponent } from './components/expense-wrapper.component';
 
-export const appRoutes: Route[] = [
+export const routes: Routes = [
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('mfeDashboard/Routes').then((m) => m.remoteRoutes)
+  },
   {
     path: '',
-    loadChildren: () =>
-      import('mfeDashboard/Routes').then((m) => m.remoteRoutes),
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'mfeSettings',
@@ -21,7 +28,10 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('mfeBudget/Routes').then((m) => m.remoteRoutes),
   },
- 
+  {
+    path: 'expense',
+    component: ExpenseWrapperComponent
+  },
   {
     path: '**',
     redirectTo: '',

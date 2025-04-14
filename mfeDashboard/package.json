@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@angular-architects/module-federation": "^19.0.3"
+  }
+}

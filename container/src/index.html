@@ -6,6 +6,18 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      // Add type="module" to dynamically generated scripts with .mjs extension
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.querySelectorAll('script[src$=".js"]').forEach(function(script) {
+            if (script.src.includes('styles.js') || script.src.includes('remoteEntry.mjs')) {
+              script.type = 'module';
+            }
+          });
+        }, 10);
+      });
+    </script>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License

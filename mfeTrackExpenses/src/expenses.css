@@ -1,0 +1,384 @@
+/* Shared UI Variables */
+:root {
+  /* Brand Colors */
+  --brand-primary: #C26B1B;
+  --brand-primary-dark: #A45615;
+  --brand-secondary: #F5F5F5;
+  --brand-accent: #4A90E2;
+
+  /* Text Colors */
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  
+  /* Border Colors */
+  --border-color: #E5E7EB;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+/* Base styles */
+.expenses-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.expenses-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Tab styling */
+.tab-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.tab-button.active {
+  background-color: var(--brand-primary, #C26B1B);
+  color: white;
+}
+
+/* Form styling */
+.expenses-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1rem; /* Add space between the grid and buttons */
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary, #4B5563);
+  margin-bottom: 0.5rem;
+}
+
+.form-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6B7280);
+  margin-top: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+}
+
+.input-wrapper textarea {
+  height: auto;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-primary-dark, #B45309);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background-color: #F9FAFB;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  height: 100%; /* Fill the height of the input wrapper */
+}
+
+/* Style select dropdowns to match other inputs */
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234B5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+.dollar-input {
+  padding-left: 30px;
+}
+
+.form-input:focus {
+  border-color: var(--brand-primary, #C26B1B);
+  box-shadow: 0 0 0 2px rgba(194, 107, 27, 0.2);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 38px;
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: none;
+  width: 48%; /* Give buttons almost half the width, but leave some spacing */
+  text-align: center;
+}
+
+.btn-primary { 
+  background-color: var(--brand-primary, #C26B1B);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-primary-dark, #A45615);
+}
+
+.btn-secondary {
+  background-color: var(--brand-secondary, #F5F5F5);
+  color: var(--text-primary, #111827);
+  border: 1px solid var(--border-color, #E5E7EB);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color, #E5E7EB);
+}
+
+/* Remove number input arrows */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Update the layout styles */
+.form-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.expenses-table-section {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.expenses-table-section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+.expenses-table-container {
+  overflow-x: auto;
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.expenses-table th, 
+.expenses-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.expenses-table th:last-child, 
+.expenses-table td:last-child {
+  width: 180px; /* Set a fixed width for the actions column */
+  text-align: center;
+}
+
+.expenses-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #555;
+}
+
+.expenses-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.error-message {
+  color: #f44336;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+  .form-section,
+  .expenses-table-section {
+    width: 100%;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Add styles for the category badge */
+.category-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+/* Action buttons in the table */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Use the shared UI button styles but keep specific sizing for the table */
+.edit-button, .delete-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* Use the brand-primary color from shared UI for the edit button */
+.edit-button {
+  background-color: var(--brand-primary, #C26B1B);
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: var(--brand-primary-dark, #A45615);
+}
+
+/* Use the brand-secondary color from shared UI for the delete button */
+.delete-button {
+  background-color: var(--brand-secondary, #F5F5F5);
+  color: var(--text-primary, #111827);
+  border: 1px solid var(--border-color, #E5E7EB);
+}
+
+.delete-button:hover {
+  background-color: var(--border-color, #E5E7EB);
+}
+
+/* User info styles */
+.user-info {
+  margin-bottom: 1.5rem;
+  padding: 12px 16px;
+  background-color: var(--brand-secondary, #F5F5F5);
+  border-radius: var(--border-radius-md, 8px);
+  border-left: 4px solid var(--brand-primary, #C26B1B);
+}
+
+.user-info p {
+  margin: 0;
+  color: var(--text-primary, #111827);
+  font-size: 0.95rem;
+} 

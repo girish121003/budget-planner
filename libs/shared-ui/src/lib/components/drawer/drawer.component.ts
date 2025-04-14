@@ -18,7 +18,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
       [@slideAnimation]="isOpen ? 'open' : 'closed'"
     >
       <div class="drawer-header">
-        <h2 class="drawer-title">Menu</h2>
+        <div class="drawer-title"></div>
         <button class="close-button" (click)="closeDrawer()">
           <img src="assets/shared/icons/close-btn.png" alt="Close" />
         </button>
@@ -32,12 +32,14 @@ import { trigger, transition, style, animate } from '@angular/animations';
                 class="nav-link"
                 (click)="navigateTo(item.route, $event)"
               >
-                <img 
-                  src="assets/shared/icons/{{item.icon}}" 
-                  alt="{{item.name}}" 
-                  class="nav-icon"
-                />
-                <span class="nav-text">{{item.name}}</span>
+                <div class="menu-item">
+                  <img 
+                    src="assets/shared/icons/{{item.icon}}" 
+                    alt="{{item.name}}" 
+                    class="nav-icon"
+                  />
+                  <span class="nav-text">{{item.name}}</span>
+                </div>
               </a>
             </li>
           </ul>
@@ -46,6 +48,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
     </div>
   `,
   styles: [`
+    @import url('https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap');
+    
     .drawer-backdrop {
       position: fixed;
       top: 0;
@@ -72,7 +76,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
       right: 0;
       width: 300px;
       height: 100vh;
-      background-color: white;
+      background-color: #FAF5F2;
       box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -89,8 +93,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 10px;
+      margin-bottom: 20px;
     }
     
     .drawer-title {
@@ -101,59 +105,72 @@ import { trigger, transition, style, animate } from '@angular/animations';
     }
     
     .close-button {
-      background: none;
+      background: transparent;
       border: none;
-      padding: 4px;
+      padding: 8px;
+      border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 30px;
+      height: 30px;
     }
     
     .close-button img {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
     }
     
     .drawer-content {
       flex: 1;
       overflow-y: auto;
-      padding: 16px 0;
     }
     
     .nav-list {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     
     .nav-item {
-      margin-bottom: 4px;
+      margin-bottom: 10px;
     }
     
     .nav-link {
-      display: flex;
-      align-items: center;
-      padding: 12px 16px;
+      display: block;
       text-decoration: none;
-      color: #333;
-      transition: background-color 0.2s ease;
-      border-radius: 4px;
+      color: white;
+      transition: transform 0.2s ease;
     }
     
     .nav-link:hover {
-      background-color: #f5f5f5;
+      transform: translateY(-2px);
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      background-color: #E67E22;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .nav-icon {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       margin-right: 16px;
     }
     
     .nav-text {
-      font-size: 1rem;
-      font-weight: 500;
+      font-family: 'Saira', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
     }
   `],
   animations: [
