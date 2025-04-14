@@ -15,6 +15,24 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
           <img src="assets/shared/icons/recieve-cash.png" alt="Budget Planner" class="logo">
           <h1>{{ title }}</h1>
         </div>
+        
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li>
+              <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li>
+              <a routerLink="/mfeBudget" routerLinkActive="active">Budget</a>
+            </li>
+            <li>
+              <a routerLink="/mfeReports" routerLinkActive="active">Reports</a>
+            </li>
+            <li>
+              <a routerLink="/mfeSettings" routerLinkActive="active">Settings</a>
+            </li>
+          </ul>
+        </nav>
+
         <div class="menu-container">
           <button 
             class="menu-button"
@@ -97,6 +115,41 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
       font-size: 1.5rem;
       color: #333;
     }
+
+    .main-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #ffffff;
+      background-color: #C26B1B;
+    }
+
+    .nav-links li a.active {
+      color: #ffffff;
+      background-color: #C26B1B;
+    }
     
     .menu-button {
       background: none;
@@ -140,13 +193,10 @@ export class AppComponent {
   isDrawerOpen = false;
   
   navigationItems = [
-    { name: 'Home', icon: 'home-icon.png', route: '/' },
-    { name: 'Plan Your Budget', icon: 'budget-icon.png', route: '/budget' },
-    { name: 'Analytics & Reports', icon: 'reports-icon.png', route: '/reports' },
-    { name: 'Settings', icon: 'settings-icon.png', route: '/settings' },
-    { name: 'User Assistance', icon: 'assistance-icon.png', route: '/assistance' },
-    { name: 'Track Your Expenses', icon: 'expenses-icon.png', route: '/expenses' },
-    { name: 'Summary', icon: 'summary-icon.png', route: '/summary' }
+    { name: 'Dashboard', icon: 'home-icon.png', route: '/dashboard' },
+    { name: 'Budget', icon: 'budget-icon.png', route: '/mfeBudget' },
+    { name: 'Reports', icon: 'reports-icon.png', route: '/mfeReports' },
+    { name: 'Settings', icon: 'settings-icon.png', route: '/mfeSettings' }
   ];
   
   constructor(private router: Router) {}
