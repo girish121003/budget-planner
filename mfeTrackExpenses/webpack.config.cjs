@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/main.tsx',
   mode: 'development',
   devServer: {
     static: {
@@ -39,21 +39,28 @@ module.exports = {
     ]
   },
   output: {
-    publicPath: 'auto',
-    clean: true
+    publicPath: 'http://localhost:4201/',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    library: {
+      type: 'module'
+    }
+  },
+  experiments: {
+    outputModule: true
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfeTrackExpenses',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': './src/app/remote-entry/entry.component'
+        './ExpenseTrackerWC': './src/bootstrap.tsx'  // 👈 points to web component wrapper
       },
       shared: {
-        react: { singleton: true, requiredVersion: '^18.2.0' },
-        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
-        'react-router-dom': { singleton: true, requiredVersion: '^6.22.3' }
-      }
+        react: { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true }
+      },
+      library: { type: 'module' } // ✅ Required for ESM
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'

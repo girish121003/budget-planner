@@ -28,6 +28,9 @@ import { DrawerComponent, FooterComponent } from '@budget-planner/shared-ui';
               <a routerLink="/mfeReports" routerLinkActive="active">Reports</a>
             </li>
             <li>
+              <a routerLink="/expense" routerLinkActive="active">Expense</a>
+            </li>
+            <li>
               <a routerLink="/mfeSettings" routerLinkActive="active">Settings</a>
             </li>
           </ul>
@@ -196,6 +199,7 @@ export class AppComponent {
     { name: 'Dashboard', icon: 'home-icon.png', route: '/dashboard' },
     { name: 'Budget', icon: 'budget-icon.png', route: '/mfeBudget' },
     { name: 'Reports', icon: 'reports-icon.png', route: '/mfeReports' },
+    { name: 'Expense', icon: 'expense-icon.png', route: '/expense' },
     { name: 'Settings', icon: 'settings-icon.png', route: '/mfeSettings' }
   ];
   

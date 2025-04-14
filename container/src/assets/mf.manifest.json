@@ -1,3 +1,4 @@
 {
-  "mfeDashboard": "http://localhost:8081/remoteEntry.js"
+  "mfeDashboard": "http://localhost:8081/remoteEntry.js",
+  "mfeTrackExpenses": "http://localhost:4201/remoteEntry.js"
 } 

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { ExpenseWrapperComponent } from './components/expense-wrapper.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     path: 'mfeBudget',
     loadChildren: () =>
       import('mfeBudget/Routes').then((m) => m.remoteRoutes),
+  },
+  {
+    path: 'expense',
+    component: ExpenseWrapperComponent
   },
   {
     path: '**',
