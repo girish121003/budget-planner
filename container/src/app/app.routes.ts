@@ -1,15 +1,21 @@
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 
-export const appRoutes: Route[] = [
-  {
-    path: '',
-    loadChildren: () =>
-      import('mfeDashboard/Routes').then((m) => m.remoteRoutes),
-  },
+export const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('mfeDashboard/Routes').then((m) => m.remoteRoutes),
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:8081/remoteEntry.js',
+        exposedModule: './DashboardModule'
+      })
+      .then(m => m.DashboardModule)
+  },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'mfeSettings',

@@ -11,8 +11,7 @@ import '@angular/core/primitives/signals';
     ]);
 
     // Initialize the application
-    const { default: bootstrap } = await import('./bootstrap');
-    await bootstrap();
+    import('./bootstrap').catch(err => console.error(err));
   } catch (err) {
     console.error('Error bootstrapping app', err);
   }

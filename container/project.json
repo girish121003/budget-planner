@@ -17,21 +17,11 @@
         "tsConfig": "container/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "container/public"
-          },
-          {
-            "glob": "**/*",
-            "input": "libs/shared-ui/src/assets",
-            "output": "assets/shared"
-          }
+          "container/src/favicon.ico",
+          "container/src/assets"
         ],
         "styles": ["container/src/styles.scss"],
-        "scripts": [],
-        "customWebpackConfig": {
-          "path": "container/webpack.config.ts"
-        }
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -43,14 +33,11 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all",
-          "customWebpackConfig": {
-            "path": "container/webpack.prod.config.ts"
-          }
+          "outputHashing": "all"
         },
         "development": {
           "buildOptimizer": false,
@@ -64,17 +51,13 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nx/angular:module-federation-dev-server",
-      "options": {
-        "port": 4200,
-        "publicHost": "http://localhost:4200"
-      },
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "container:build:production"
+          "browserTarget": "container:build:production"
         },
         "development": {
-          "buildTarget": "container:build:development"
+          "browserTarget": "container:build:development"
         }
       },
       "defaultConfiguration": "development"

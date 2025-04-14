@@ -17,21 +17,11 @@
         "tsConfig": "mfeDashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "mfeDashboard/public"
-          },
-          {
-            "glob": "**/*",
-            "input": "libs/shared-ui/src/assets",
-            "output": "assets/shared"
-          }
+          "mfeDashboard/src/favicon.ico",
+          "mfeDashboard/src/assets"
         ],
         "styles": ["mfeDashboard/src/styles.scss"],
-        "scripts": [],
-        "customWebpackConfig": {
-          "path": "mfeDashboard/webpack.config.ts"
-        }
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -43,22 +33,19 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all",
-          "customWebpackConfig": {
-            "path": "mfeDashboard/webpack.prod.config.ts"
-          }
+          "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
           "sourceMap": true,
-          "namedChunks": true
+          "namedChunks": true,
+          "extractLicenses": false,
+          "vendorChunk": true,
+          "buildOptimizer": false
         }
       },
       "defaultConfiguration": "production"
@@ -66,18 +53,15 @@
     "serve": {
       "executor": "@nx/angular:dev-server",
       "options": {
-        "port": 4205,
-        "publicHost": "http://localhost:4205",
-        "hmr": true,
-        "watch": true,
-        "liveReload": true
+        "port": 8081,
+        "browserTarget": "mfeDashboard:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "mfeDashboard:build:production"
+          "browserTarget": "mfeDashboard:build:production"
         },
         "development": {
-          "buildTarget": "mfeDashboard:build:development"
+          "browserTarget": "mfeDashboard:build:development"
         }
       },
       "defaultConfiguration": "development"
