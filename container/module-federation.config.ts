@@ -1,5 +1,5 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
-
+const isProd = process.env.NODE_ENV === 'production';
 const config: ModuleFederationConfig = {
   name: 'container',
   /**
@@ -15,8 +15,18 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeDashboard', 'http://localhost:8081/remoteEntry.js'],
-    ['mfeTrackExpenses', 'http://localhost:4201/remoteEntry.js'] 
+    [
+      'mfeTrackExpenses',
+      isProd
+        ? 'https://girish121003.github.io/budget-planner/mfeTrackExpenses/remoteEntry.js'
+        : 'http://localhost:4201/remoteEntry.js'
+    ],
+    [
+      'mfeDashboard',
+      isProd
+        ? 'https://girish121003.github.io/budget-planner/mfeDashboard/remoteEntry.js'
+        : 'http://localhost:4202/remoteEntry.js'
+    ]
   ],
   shared: (libraryName, sharedConfig) => {
     if (libraryName === 'rxjs') {
