@@ -1,0 +1,289 @@
+{
+  "id": "mfeSettings",
+  "name": "mfeSettings",
+  "metaData": {
+    "name": "mfeSettings",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "0.0.0",
+      "buildName": "@budget-planner-app/source"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.mjs",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfeSettings",
+    "pluginVersion": "0.9.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common/http",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/common/http",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/common",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/di",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/core/primitives/di",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/event-dispatch",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/core/primitives/event-dispatch",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/signals",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/core/primitives/signals",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/core",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/platform-browser",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/platform-browser",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "id": "mfeSettings:@angular/router",
+      "assets": {
+        "js": {
+          "async": [
+            "common.js",
+            "28.js"
+          ],
+          "sync": [
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "path": "./Routes",
+      "id": "mfeSettings:Routes",
+      "name": "Routes",
+      "requires": [],
+      "file": "mfeSettings/src/app/remote-entry/entry.routes.ts",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ]
+}
