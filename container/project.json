@@ -91,5 +91,8 @@
         "spa": true
       }
     }
-  }
+  },
+  "scripts": {
+  "build:container": "cross-env NODE_ENV=production nx build container --configuration=production"
+}
 }
