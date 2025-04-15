@@ -30,23 +30,27 @@
       "name": "@angular/common/http",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "626.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -55,22 +59,27 @@
       "name": "@angular/common",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "177.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -79,17 +88,27 @@
       "name": "@angular/core/primitives/di",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "56.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -98,17 +117,27 @@
       "name": "@angular/core/primitives/event-dispatch",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "546.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -117,17 +146,27 @@
       "name": "@angular/core/primitives/signals",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "488.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -136,21 +175,27 @@
       "name": "@angular/core",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "705.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -159,20 +204,70 @@
       "name": "@angular/platform-browser",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "203.js",
-            "626.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "345.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mfeReports:@angular/router",
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "assets": {
+        "js": {
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
+          "sync": [
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mfeReports:rxjs/operators",
+      "name": "rxjs/operators",
+      "version": "7.8.2",
+      "singleton": true,
+      "requiredVersion": "~7.8.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "37.js"
           ]
         },
         "css": {
@@ -182,24 +277,16 @@
       }
     },
     {
-      "id": "mfeReports:@angular/router",
-      "name": "@angular/router",
-      "version": "19.2.1",
+      "id": "mfeReports:rxjs",
+      "name": "rxjs",
+      "version": "7.8.2",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "~7.8.0",
       "assets": {
         "js": {
-          "async": [
-            "177.js",
-            "705.js",
-            "345.js",
-            "488.js",
-            "56.js",
-            "546.js",
-            "626.js"
-          ],
+          "async": [],
           "sync": [
-            "220.js"
+            "87.js"
           ]
         },
         "css": {

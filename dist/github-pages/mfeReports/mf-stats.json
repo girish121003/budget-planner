@@ -27,179 +27,282 @@
   "shared": [
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/common/http",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/common/http",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "626.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/common",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/common",
       "assets": {
         "js": {
           "async": [
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "177.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/core/primitives/di",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/core/primitives/di",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "56.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/core/primitives/event-dispatch",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/core/primitives/event-dispatch",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "546.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/core/primitives/signals",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/core/primitives/signals",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
           "sync": [
-            "488.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/core",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/core",
       "assets": {
         "js": {
           "async": [
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "705.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       },
       "usedIn": []
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "shareScope": "default",
       "strictVersion": true,
+      "eager": true,
       "name": "@angular/platform-browser",
       "version": "19.2.1",
-      "eager": false,
       "id": "mfeReports:@angular/platform-browser",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "203.js",
-            "626.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
           ],
           "sync": [
-            "345.js"
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.2.1",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/router",
+      "version": "19.2.1",
+      "id": "mfeReports:@angular/router",
+      "assets": {
+        "js": {
+          "async": [
+            "656.js",
+            "87.js",
+            "37.js",
+            "common.js",
+            "426.js"
+          ],
+          "sync": [
+            "polyfills.js",
+            "main.js",
+            "remoteEntry.mjs"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~7.8.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "rxjs/operators",
+      "version": "7.8.2",
+      "eager": false,
+      "id": "mfeReports:rxjs/operators",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "37.js"
           ]
         },
         "css": {
@@ -211,26 +314,18 @@
     },
     {
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "~7.8.0",
       "shareScope": "default",
       "strictVersion": true,
-      "name": "@angular/router",
-      "version": "19.2.1",
+      "name": "rxjs",
+      "version": "7.8.2",
       "eager": false,
-      "id": "mfeReports:@angular/router",
+      "id": "mfeReports:rxjs",
       "assets": {
         "js": {
-          "async": [
-            "177.js",
-            "705.js",
-            "345.js",
-            "488.js",
-            "56.js",
-            "546.js",
-            "626.js"
-          ],
+          "async": [],
           "sync": [
-            "220.js"
+            "87.js"
           ]
         },
         "css": {

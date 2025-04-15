@@ -30,23 +30,24 @@
       "name": "@angular/common/http",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "common.js",
+            "28.js"
           ],
           "sync": [
-            "626.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -55,22 +56,24 @@
       "name": "@angular/common",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "705.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "common.js",
+            "28.js"
           ],
           "sync": [
-            "177.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -79,17 +82,24 @@
       "name": "@angular/core/primitives/di",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "common.js",
+            "28.js"
+          ],
           "sync": [
-            "56.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -98,17 +108,24 @@
       "name": "@angular/core/primitives/event-dispatch",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "common.js",
+            "28.js"
+          ],
           "sync": [
-            "546.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -117,17 +134,24 @@
       "name": "@angular/core/primitives/signals",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
-          "async": [],
+          "async": [
+            "common.js",
+            "28.js"
+          ],
           "sync": [
-            "488.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -136,21 +160,24 @@
       "name": "@angular/core",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "488.js",
-            "56.js",
-            "546.js"
+            "common.js",
+            "28.js"
           ],
           "sync": [
-            "705.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -159,25 +186,24 @@
       "name": "@angular/platform-browser",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "203.js",
-            "626.js",
-            "488.js",
-            "56.js",
-            "546.js"
+            "common.js",
+            "28.js"
           ],
           "sync": [
-            "345.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     },
@@ -186,25 +212,24 @@
       "name": "@angular/router",
       "version": "19.2.1",
       "singleton": true,
-      "requiredVersion": "~19.2.0",
+      "requiredVersion": "^19.2.1",
       "assets": {
         "js": {
           "async": [
-            "177.js",
-            "705.js",
-            "345.js",
-            "488.js",
-            "56.js",
-            "546.js",
-            "626.js"
+            "common.js",
+            "28.js"
           ],
           "sync": [
-            "220.js"
+            "remoteEntry.mjs",
+            "polyfills.js",
+            "main.js"
           ]
         },
         "css": {
           "async": [],
-          "sync": []
+          "sync": [
+            "styles.css"
+          ]
         }
       }
     }

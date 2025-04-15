@@ -6,6 +6,18 @@
     <base href="/budget-planner/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+      // Add type="module" to dynamically generated scripts with .mjs extension
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.querySelectorAll('script[src$=".js"]').forEach(function(script) {
+            if (script.src.includes('styles.js') || script.src.includes('remoteEntry.mjs')) {
+              script.type = 'module';
+            }
+          });
+        }, 10);
+      });
+    </script>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -29,13 +41,13 @@
         height: 100%;
         overflow-x: hidden;
       }
-      app-root {
+      budget-planner-root {
         display: block;
         width: 100%;
       }
     </style>
-  <style>html,body{margin:0;padding:0;width:100%;height:100%;font-family:Arial,sans-serif;box-sizing:border-box}*{box-sizing:inherit}:root{--primary-color:#C26B1B;--primary-hover:#A25A0A;--text-color:#333;--text-secondary:#666;--background-color:#f5f5f5;--card-background:white;--border-color:#ddd;--shadow:0 2px 4px rgba(0,0,0,.05)}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
+  <link rel="stylesheet" href="styles.css"></head>
   <body>
     <budget-planner-root></budget-planner-root>
-  <script src="polyfills.js" type="module"></script><script src="main.js" type="module"></script></body>
+  <script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="main.js" type="module"></script></body>
 </html>
