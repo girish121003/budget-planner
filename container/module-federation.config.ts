@@ -15,8 +15,8 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [
-    ['mfeDashboard', 'https://girishsharma.github.io/budget-planner/mfeDashboard/remoteEntry.js'],
-    ['mfeTrackExpenses', 'https://girishsharma.github.io/budget-planner/mfeTrackExpenses/remoteEntry.js'] 
+    ['mfeDashboard', 'http://localhost:8081/remoteEntry.js'],
+    ['mfeTrackExpenses', 'http://localhost:4201/remoteEntry.js'] 
   ],
   shared: (libraryName, sharedConfig) => {
     if (libraryName === 'rxjs') {
