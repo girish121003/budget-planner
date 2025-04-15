@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  # Changed to deploy from gh-pages branch
+      - main  # Changed to deploy from main branch
 
 jobs:
   deploy:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: gh-pages  # Checkout the gh-pages branch
+          ref: main  # Checkout the main branch
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -67,4 +67,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/github-pages
           enable_jekyll: false
-          publish_branch: gh-pages  # Explicitly set the publish branch 
+          publish_branch: gh-pages  # Deploy to gh-pages branch 
